@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    "functions.h": "c",
+    "getuserguess.h": "c",
+    "verifyguess.h": "c",
+    "generaterandnumber.h": "c",
+    "stdlib.h": "c"
+  }
+}
