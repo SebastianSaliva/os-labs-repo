@@ -36,6 +36,8 @@ void check_hand(struct Card *hand) {
     }
     if (hand[i].suit == 'C') {
       c.clubs++;
+
+      c.clubs++;
     }
     if (hand[i].suit == 'S') {
       c.spades++;
