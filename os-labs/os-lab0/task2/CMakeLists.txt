@@ -11,5 +11,8 @@ include_directories(include)
 # Add the executable
 
 add_executable(TestName
- src/main.c
- src/functions.c)
+  src/main.c
+  src/Time.c
+  src/GetTime.c
+  src/PrintTime.c
+)

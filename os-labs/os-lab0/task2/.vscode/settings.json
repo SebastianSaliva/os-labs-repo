@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "printtime.h": "c",
+    "gettime.h": "c"
+  }
+}

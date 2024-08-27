@@ -12,4 +12,7 @@ include_directories(include)
 
 add_executable(TestName
  src/main.c
- src/functions.c)
+ src/Card.c
+ src/fill_deck.c
+ src/fill_hand.c
+ src/check_hand.c)
