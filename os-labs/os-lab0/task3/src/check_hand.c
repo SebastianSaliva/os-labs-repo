@@ -82,4 +82,43 @@ void check_hand(struct Card *hand) {
   }
 
   int index = 0;
+
+  int *ptr = (int *)&c;
+  int size = sizeof(struct CardCounter) / sizeof(int);
+
+  for (int i = 0; i < 4; i++) {
+    printf("%d ", ptr[i]);
+    if (ptr[i] == 5) {
+      printf("Flush!");
+      return;
+    }
+  }
+  int pairs = 0;
+  int threeofkind = 0;
+  int fourofkind = 0;
+  for (int i = 4; i < size; i++) {
+    printf("%d ", ptr[i]);
+    if (ptr[i] == 2) {
+      pairs++;
+    };
+    if (ptr[i] == 3) {
+      threeofkind++;
+    };
+    if (ptr[i] == 4) {
+      fourofkind++;
+    };
+  }
+
+  if (fourofkind) {
+    printf("Four of kind!");
+  }
+  if (threeofkind) {
+    printf("Three of kind!");
+  }
+  if (pairs == 2) {
+    printf("Two pairs!");
+  }
+  if (pairs = 1) {
+    printf("Pair!");
+  }
 }
