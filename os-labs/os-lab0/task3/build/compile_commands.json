@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build",
+  "command": "/usr/bin/gcc  -I/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/include -g -o CMakeFiles/TestName.dir/src/main.c.o -c /home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/main.c",
+  "file": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/main.c",
+  "output": "CMakeFiles/TestName.dir/src/main.c.o"
+},
+{
+  "directory": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build",
+  "command": "/usr/bin/gcc  -I/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/include -g -o CMakeFiles/TestName.dir/src/Card.c.o -c /home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/Card.c",
+  "file": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/Card.c",
+  "output": "CMakeFiles/TestName.dir/src/Card.c.o"
+},
+{
+  "directory": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build",
+  "command": "/usr/bin/gcc  -I/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/include -g -o CMakeFiles/TestName.dir/src/fill_deck.c.o -c /home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/fill_deck.c",
+  "file": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/fill_deck.c",
+  "output": "CMakeFiles/TestName.dir/src/fill_deck.c.o"
+},
+{
+  "directory": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build",
+  "command": "/usr/bin/gcc  -I/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/include -g -o CMakeFiles/TestName.dir/src/fill_hand.c.o -c /home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/fill_hand.c",
+  "file": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/fill_hand.c",
+  "output": "CMakeFiles/TestName.dir/src/fill_hand.c.o"
+},
+{
+  "directory": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build",
+  "command": "/usr/bin/gcc  -I/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/include -g -o CMakeFiles/TestName.dir/src/check_hand.c.o -c /home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/check_hand.c",
+  "file": "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/src/check_hand.c",
+  "output": "CMakeFiles/TestName.dir/src/check_hand.c.o"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/TestName.dir/src/main.c.o CMakeFiles/TestName.dir/src/Card.c.o CMakeFiles/TestName.dir/src/fill_deck.c.o CMakeFiles/TestName.dir/src/fill_hand.c.o CMakeFiles/TestName.dir/src/check_hand.c.o -o TestName 
