@@ -4,7 +4,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-void PrintTest() { printf("Test\n"); }
+/**
+ * @brief prints the text label of every digit of the interger passed.
+ *
+ * @param[in] num Integer to print digit by digit.
+ *
+ *
+ * @example
+ * NumToStr(123);
+ * // one two three
+ */
 
 void NumToStr(int num) {
   char *digitInText[] = {"zero ", "one ", "two ",   "three ", "four ",
@@ -53,6 +62,7 @@ void NumToStr(int num) {
   }
 }
 
+// basic exponent function
 int power(int base, int exp) {
   int i, result = 1;
   for (i = 0; i < exp; i++) result *= base;

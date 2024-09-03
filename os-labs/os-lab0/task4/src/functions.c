@@ -20,34 +20,17 @@
  */
 
 void Replace(char* src, char* dst, char find, char replacement) {
-  // int i;
-  for (int i = 0; i < strlen(src); i++) {
+  int i;
+  for (i = 0; i < strlen(src); i++) {
     if (src[i] == find) {
       dst[i] = replacement;
     } else {
       dst[i] = src[i];
     }
   }
-  // dst[i] = '\0';
+  dst[i] = '\0';
   return;
 }
-
-/**
- * @brief Checks whether two numbers are equal.
- *
- * This functions checks whether the guess equals the target,
- * returns 0 if so, 1 if the guess is larger than target, or -1 if smaller
- *
- * @param[in] target Number to guess.
- * @param[in] guess Number guessed.
- * @return 0 if equals else sign of target - guess
- *
- * @note This function does not handle overflow.
- *
- * @example
- * int result = VerifyGuess(5, 5);
- * // result now holds the value 0
- */
 
 /**
  * @brief inserts ins after each instance of find found in src and stores it in
@@ -75,7 +58,8 @@ void Insert(char* src, char* dst, char find, char* ins) {
   }
   int offset = 0;
   int occId = 0;
-  for (int i = 0; i < ins_len * occuranceCount + src_len; i++) {
+  int i;
+  for (i = 0; i < ins_len * occuranceCount + src_len; i++) {
     dst[i] = src[i - offset];
 
     if (i - offset == occuranceIndexes[occId]) {
@@ -88,4 +72,5 @@ void Insert(char* src, char* dst, char find, char* ins) {
       occId++;
     }
   }
+  dst[i] = '\0';
 }

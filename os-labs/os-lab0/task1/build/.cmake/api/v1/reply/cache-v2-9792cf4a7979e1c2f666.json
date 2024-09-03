@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4/build"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -847,7 +847,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "TestName"
+			"value" : "Task1"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1146,7 +1146,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "TestName_BINARY_DIR",
+			"name" : "Task1_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1155,10 +1155,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4/build"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1/build"
 		},
 		{
-			"name" : "TestName_IS_TOP_LEVEL",
+			"name" : "Task1_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1170,7 +1170,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "TestName_SOURCE_DIR",
+			"name" : "Task1_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1179,7 +1179,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

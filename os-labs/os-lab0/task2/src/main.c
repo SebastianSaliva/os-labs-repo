@@ -3,7 +3,7 @@
 #include "Time.h"
 
 int main() {
-  struct Time time1 = {1, 2, 4};
+  struct Time time1 = {15, 5, 32};
 
   PrintTime(time1);
 

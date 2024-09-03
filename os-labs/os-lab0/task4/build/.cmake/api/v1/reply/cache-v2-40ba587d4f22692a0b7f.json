@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -155,10 +155,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/g++"
 		},
 		{
@@ -283,10 +283,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/gcc"
 		},
 		{
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1155,7 +1155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3/build"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4/build"
 		},
 		{
 			"name" : "TestName_IS_TOP_LEVEL",
@@ -1179,7 +1179,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task3"
+			"value" : "/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task4"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

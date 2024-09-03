@@ -5,13 +5,12 @@
 #define MAX_LENGTH 100
 
 int main() {
-  PrintTest();
-
   char src[] = "hola mundo";
   char target = 'o';
   char put[] = "ronda";
+  char put2 = 'a';
   char dst[MAX_LENGTH];
-
+  // Replace(src, dst, target, put2);
   Insert(src, dst, target, put);
   printf("%s\n", dst);
 
