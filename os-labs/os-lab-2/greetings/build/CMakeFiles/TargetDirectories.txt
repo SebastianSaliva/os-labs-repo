@@ -1,0 +1,3 @@
+/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/build/CMakeFiles/greetings.dir
+/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/build/CMakeFiles/edit_cache.dir
+/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/build/CMakeFiles/rebuild_cache.dir

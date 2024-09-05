@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/include -g -o CMakeFiles/greetings.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/src/main.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/greetings/src/main.c",
+  "output": "CMakeFiles/greetings.dir/src/main.c.o"
+}
+]
