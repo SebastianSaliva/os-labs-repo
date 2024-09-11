@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/TestName.dir/all
+all: CMakeFiles/counter_handler.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/TestName.dir/clean
+clean: CMakeFiles/counter_handler.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/TestName.dir
+# Target rules for target CMakeFiles/counter_handler.dir
 
 # All Build rule for target.
-CMakeFiles/TestName.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestName.dir/build.make CMakeFiles/TestName.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestName.dir/build.make CMakeFiles/TestName.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles --progress-num=1,2,3 "Built target TestName"
-.PHONY : CMakeFiles/TestName.dir/all
+CMakeFiles/counter_handler.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/counter_handler.dir/build.make CMakeFiles/counter_handler.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/counter_handler.dir/build.make CMakeFiles/counter_handler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles --progress-num=1,2,3 "Built target counter_handler"
+.PHONY : CMakeFiles/counter_handler.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/TestName.dir/rule: cmake_check_build_system
+CMakeFiles/counter_handler.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TestName.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/counter_handler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles 0
-.PHONY : CMakeFiles/TestName.dir/rule
+.PHONY : CMakeFiles/counter_handler.dir/rule
 
 # Convenience name for target.
-TestName: CMakeFiles/TestName.dir/rule
-.PHONY : TestName
+counter_handler: CMakeFiles/counter_handler.dir/rule
+.PHONY : counter_handler
 
 # clean rule for target.
-CMakeFiles/TestName.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestName.dir/build.make CMakeFiles/TestName.dir/clean
-.PHONY : CMakeFiles/TestName.dir/clean
+CMakeFiles/counter_handler.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/counter_handler.dir/build.make CMakeFiles/counter_handler.dir/clean
+.PHONY : CMakeFiles/counter_handler.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

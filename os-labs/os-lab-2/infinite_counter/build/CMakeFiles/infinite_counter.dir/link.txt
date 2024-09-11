@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/infinite_counter.dir/src/main.c.o CMakeFiles/infinite_counter.dir/src/functions.c.o -o infinite_counter 
