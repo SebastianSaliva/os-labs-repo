@@ -11,8 +11,8 @@
 
 #define SHM_SIZE 1000001 * sizeof(int)  // Shared memory size
 
-#define SEM_PRODUCER "/producer"
-#define SEM_CONSUMER "/consumer"
+#define SEM_WRITER "/writer"
+#define SEM_READER "/reader"
 
 int main() {
   key_t key;
@@ -27,15 +27,15 @@ int main() {
     exit(EXIT_FAILURE);
   }
 
-  sem_t *semaphore_producer = sem_open(SEM_PRODUCER, O_CREAT, 0666, 0);
-  if (semaphore_producer == SEM_FAILED) {
-    perror("error opening producer semaphore");
+  sem_t *semaphore_writer = sem_open(SEM_WRITER, O_CREAT, 0666, 0);
+  if (semaphore_writer == SEM_FAILED) {
+    perror("error opening writer semaphore");
     exit(EXIT_FAILURE);
   }
 
-  sem_t *semaphore_consumer = sem_open(SEM_CONSUMER, O_CREAT, 0666, 0);
-  if (semaphore_consumer == SEM_FAILED) {
-    perror("error opening consumer semaphore");
+  sem_t *semaphore_reader = sem_open(SEM_READER, O_CREAT, 0666, 0);
+  if (semaphore_reader == SEM_FAILED) {
+    perror("error opening reader semaphore");
     exit(EXIT_FAILURE);
   }
 
@@ -55,22 +55,20 @@ int main() {
 
   // Write to shared memory
 
+  clock_t s = clock();
+
   int i = 0;
-
-  clock_t s;
-  s = clock();
-
   for (i; i < 1000000; i++) {
     data[i] = i + 1;
   }
   data[i] = s;
 
-  sem_post(semaphore_producer);
+  sem_post(semaphore_writer);
 
-  sem_wait(semaphore_consumer);
+  sem_wait(semaphore_reader);
 
-  sem_close(semaphore_consumer);
-  sem_close(semaphore_producer);
+  sem_close(semaphore_reader);
+  sem_close(semaphore_writer);
 
   // Detach from shared memory
   shmdt(data);

@@ -1,30 +1,26 @@
-// reader.c
+// qreader.c
+
 #include <fcntl.h>  // For O_* constants
 #include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/ipc.h>
+#include <sys/msg.h>
 #include <sys/shm.h>
+#include <sys/types.h>
 #include <time.h>
+#include <unistd.h>
 
-#define SHM_SIZE 1000001 * sizeof(int)  // Shared memory size
+#define SEM_WRITER "/qwriter"
+#define SEM_READER "/qreader"
 
-#define SEM_WRITER "/writer"
-#define SEM_READER "/reader"
+struct mesg_buffer {
+  long mesg_type;
+  int mesg_text;
+};
 
 int main() {
-  key_t key;
-  int shmid;
-  int *data;
-
-  // Create a unique key for the shared memory
-  key = ftok("/tmp", 65);
-
-  if (key == -1) {
-    perror("ftok");
-    return 1;
-  }
-
   sem_t *semaphore_writer = sem_open(SEM_WRITER, O_CREAT, 0666, 0);
   if (semaphore_writer == SEM_FAILED) {
     perror("error opening writer semaphore");
@@ -37,52 +33,51 @@ int main() {
     exit(EXIT_FAILURE);
   }
 
-  // Locate the shared memory segment
-  shmid = shmget(key, SHM_SIZE, 0666 | IPC_CREAT);
-  if (shmid == -1) {
-    perror("shmget failed");
-    exit(1);
+  key_t key;
+  int msgid;
+  struct mesg_buffer message;
+  // Create a unique key
+  key = ftok("/tmp", 65);
+
+  if (key == -1) {
+    perror("ftok");
+    return 1;
   }
-
-  // map the block into the process adress space
-  data = (int *)shmat(shmid, NULL, 0);
-
-  printf("address of the block: %x\n", data);
-
-  if (data == (int *)-1) {
-    perror("shmat failed");
-    exit(1);
-  }
-
-  // Read from shared memory
+  // msgget creates a message queue
+  // and returns identifier
+  msgid = msgget(key, 0666 | IPC_CREAT);
+  printf("Waiting!\n");
 
   sem_wait(semaphore_writer);
-
   int sum = 0;
   int i = 0;
   for (i; i < 1000000; i++) {
-    sum += data[i];
+    // msgrcv to receive message
+    msgrcv(msgid, &message, sizeof(message.mesg_text), 1, 0);
+    sum += message.mesg_text;
+    sem_post(semaphore_reader);
+    sem_wait(semaphore_writer);
   }
-  printf("\nSum: %d\n", sum);
 
-  double clocks = clock() - data[i];
+  printf("\nSum: %d\n", sum);
+  msgrcv(msgid, &message, sizeof(message.mesg_text), 1, 0);
+
+  double clocks = clock() - message.mesg_text;
   double t_s = ((double)clocks) / CLOCKS_PER_SEC;
 
   printf("Time Elapsed: %f seconds\n", t_s);
   printf("              %f milli seconds\n", t_s * 1000);
   printf("              %f micro seconds\n", t_s * 1000000);
   printf("              %f nano seconds\n", t_s * 1000000000);
+  sem_post(semaphore_reader);
+  sem_wait(semaphore_writer);
+  // to destroy the message queue
+  msgctl(msgid, IPC_RMID, NULL);
 
   sem_post(semaphore_reader);
 
   sem_close(semaphore_reader);
   sem_close(semaphore_writer);
-
-  // Detach from shared memory
-  shmdt(data);
-
-  // Optionally, destroy the shared memory segment
-  shmctl(shmid, IPC_RMID, NULL);
 
   return 0;
 }

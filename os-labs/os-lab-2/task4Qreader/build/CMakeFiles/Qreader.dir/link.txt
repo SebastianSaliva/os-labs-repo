@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/Qreader.dir/src/main.c.o CMakeFiles/Qreader.dir/src/functions.c.o -o Qreader 
