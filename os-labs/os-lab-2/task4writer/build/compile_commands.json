@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/include -g -o CMakeFiles/Writer.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/src/main.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/src/main.c",
+  "output": "CMakeFiles/Writer.dir/src/main.c.o"
+},
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/include -g -o CMakeFiles/Writer.dir/src/functions.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/src/functions.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/src/functions.c",
+  "output": "CMakeFiles/Writer.dir/src/functions.c.o"
+}
+]

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/include -g -o CMakeFiles/Reader.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/src/main.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/src/main.c",
+  "output": "CMakeFiles/Reader.dir/src/main.c.o"
+},
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/include -g -o CMakeFiles/Reader.dir/src/functions.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/src/functions.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4reader/src/functions.c",
+  "output": "CMakeFiles/Reader.dir/src/functions.c.o"
+}
+]
