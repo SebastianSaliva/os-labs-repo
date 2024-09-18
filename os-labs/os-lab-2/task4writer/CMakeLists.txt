@@ -5,11 +5,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -s")
 
 # Set the project name
-project(Writer) 
+project(writer) 
 
 include_directories(include)
 # Add the executable
 
-add_executable(Writer
+add_executable(writer
  src/main.c
- src/functions.c)
+ )

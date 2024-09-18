@@ -5,8 +5,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "functions.h"
-
 #define MAXINLEN 100
 
 int main() {
@@ -95,7 +93,18 @@ int main() {
   }
   return 0;
 }
-
+/**
+ * @brief removes leading / trailing spaces and adds a ; if at the end if not
+ * present.
+ *
+ * @param[in] text double pointer containing text to be modified
+ *
+ *
+ *
+ * @example
+ * prep(**"  hello  world  ");
+ * // result is "hello world;"
+ */
 void prep(char **text) {
   int i = 0;
   int prevwasspace = 0;

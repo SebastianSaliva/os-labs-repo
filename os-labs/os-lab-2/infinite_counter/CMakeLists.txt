@@ -11,5 +11,4 @@ include_directories(include)
 # Add the executable
 
 add_executable(infinite_counter
- src/main.c
- src/functions.c)
+ src/main.c)

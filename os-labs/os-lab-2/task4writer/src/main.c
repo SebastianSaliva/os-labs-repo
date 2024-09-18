@@ -52,6 +52,7 @@ int main() {
     perror("shmat failed");
     exit(EXIT_FAILURE);
   }
+  printf("writing to addr block: %x", data);
 
   // Write to shared memory
 

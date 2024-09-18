@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/Qwriter.dir/src/main.c.o CMakeFiles/Qwriter.dir/src/functions.c.o -o Qwriter 

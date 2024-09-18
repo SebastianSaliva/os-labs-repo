@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/include -g -o CMakeFiles/qreader.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/src/main.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/src/main.c",
+  "output": "CMakeFiles/qreader.dir/src/main.c.o"
+}
+]

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/b
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Writer.dir/all
+all: CMakeFiles/writer.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Writer.dir/clean
+clean: CMakeFiles/writer.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Writer.dir
+# Target rules for target CMakeFiles/writer.dir
 
 # All Build rule for target.
-CMakeFiles/Writer.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build/CMakeFiles --progress-num=1,2,3 "Built target Writer"
-.PHONY : CMakeFiles/Writer.dir/all
+CMakeFiles/writer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build/CMakeFiles --progress-num=1,2 "Built target writer"
+.PHONY : CMakeFiles/writer.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Writer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Writer.dir/all
+CMakeFiles/writer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/writer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4writer/build/CMakeFiles 0
-.PHONY : CMakeFiles/Writer.dir/rule
+.PHONY : CMakeFiles/writer.dir/rule
 
 # Convenience name for target.
-Writer: CMakeFiles/Writer.dir/rule
-.PHONY : Writer
+writer: CMakeFiles/writer.dir/rule
+.PHONY : writer
 
 # clean rule for target.
-CMakeFiles/Writer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/clean
-.PHONY : CMakeFiles/Writer.dir/clean
+CMakeFiles/writer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/clean
+.PHONY : CMakeFiles/writer.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

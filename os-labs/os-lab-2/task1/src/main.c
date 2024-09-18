@@ -3,8 +3,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "functions.h"
-
 int main() {
   pid_t idp0 = getpid();
 
@@ -19,6 +17,7 @@ int main() {
 
   if (idp1 < 0 || idp2 < 0 || idp3 < 0) perror("fork fail");
 
+  // check if on any of the childs
   if (!idp1 || !idp2 || !idp3) {
     printf("I'm a child, and my id is: %d\n", getpid());
 

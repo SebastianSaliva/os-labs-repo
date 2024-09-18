@@ -58,12 +58,12 @@ int main() {
 
   sem_wait(semaphore_writer);
 
-  int sum = 0;
+  long int sum = 0;
   int i = 0;
   for (i; i < 1000000; i++) {
     sum += data[i];
   }
-  printf("\nSum: %d\n", sum);
+  printf("\nSum: %ld\n", sum);
 
   double clocks = clock() - data[i];
   double t_s = ((double)clocks) / CLOCKS_PER_SEC;

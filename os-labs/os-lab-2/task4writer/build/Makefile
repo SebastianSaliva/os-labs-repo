@@ -117,48 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Writer
+# Target rules for targets named writer
 
 # Build rule for target.
-Writer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Writer
-.PHONY : Writer
+writer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 writer
+.PHONY : writer
 
 # fast build rule for target.
-Writer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/build
-.PHONY : Writer/fast
-
-src/functions.o: src/functions.c.o
-.PHONY : src/functions.o
-
-# target to build an object file
-src/functions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/src/functions.c.o
-.PHONY : src/functions.c.o
-
-src/functions.i: src/functions.c.i
-.PHONY : src/functions.i
-
-# target to preprocess a source file
-src/functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/src/functions.c.i
-.PHONY : src/functions.c.i
-
-src/functions.s: src/functions.c.s
-.PHONY : src/functions.s
-
-# target to generate assembly for a file
-src/functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/src/functions.c.s
-.PHONY : src/functions.c.s
+writer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/build
+.PHONY : writer/fast
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/src/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -166,7 +142,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/src/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -174,7 +150,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Writer.dir/build.make CMakeFiles/Writer.dir/src/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/writer.dir/build.make CMakeFiles/writer.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 # Help Target
@@ -185,10 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Writer"
-	@echo "... src/functions.o"
-	@echo "... src/functions.i"
-	@echo "... src/functions.s"
+	@echo "... writer"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

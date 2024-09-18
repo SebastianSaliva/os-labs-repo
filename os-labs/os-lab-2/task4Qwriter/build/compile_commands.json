@@ -1,14 +1,8 @@
 [
 {
   "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/build",
-  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/include -g -o CMakeFiles/Qwriter.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/src/main.c",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/include -g -o CMakeFiles/qwriter.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/src/main.c",
   "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/src/main.c",
-  "output": "CMakeFiles/Qwriter.dir/src/main.c.o"
-},
-{
-  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/build",
-  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/include -g -o CMakeFiles/Qwriter.dir/src/functions.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/src/functions.c",
-  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/src/functions.c",
-  "output": "CMakeFiles/Qwriter.dir/src/functions.c.o"
+  "output": "CMakeFiles/qwriter.dir/src/main.c.o"
 }
 ]

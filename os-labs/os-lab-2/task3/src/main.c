@@ -6,8 +6,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "functions.h"
-
 int pid_exists(pid_t pid) {
   if (pid <= 0) {
     return 0;  // Invalid PID

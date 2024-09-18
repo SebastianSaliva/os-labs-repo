@@ -4,8 +4,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "functions.h"
-
 int counter = 0;
 int direction = 1;
 
@@ -19,9 +17,6 @@ void handler(int signum) {
   } else if (signum == SIGINT) {
     printf("Interrupt");
   }
-
-  // write:
-  //   STDOUT_FILENO, "Heck\n", 100;
 }
 
 int main() {

@@ -33,7 +33,8 @@ int main() {
     perror("error opening reader semaphore");
     exit(EXIT_FAILURE);
   }
-
+  printf("semr:%d\n", semaphore_reader);
+  printf("semw:%d\n", semaphore_writer);
   key_t key;
   int msgid;
   struct mesg_buffer message;
@@ -49,7 +50,7 @@ int main() {
   msgid = msgget(key, 0666 | IPC_CREAT);
 
   // msgsnd to send message
-  printf("Writing %d!\n", msgid);
+  printf("Writing! msgid:%d\n", msgid);
   clock_t s = clock();
   int i = 0;
   message.mesg_type = 1;
@@ -62,6 +63,7 @@ int main() {
 
   message.mesg_text = s;
   msgsnd(msgid, &message, sizeof(message.mesg_text), 0);
+  printf("where");
   sem_post(semaphore_writer);
   sem_wait(semaphore_reader);
 
