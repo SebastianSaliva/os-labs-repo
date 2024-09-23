@@ -1,6 +1,6 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-void PrintTest();
+void* ReceiveValue(void* param);
 
 #endif  // FUNCTIONS_H

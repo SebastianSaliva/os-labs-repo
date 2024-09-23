@@ -1,0 +1,3 @@
+/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles/counter_handler.dir
+/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles/edit_cache.dir
+/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build/CMakeFiles/rebuild_cache.dir
