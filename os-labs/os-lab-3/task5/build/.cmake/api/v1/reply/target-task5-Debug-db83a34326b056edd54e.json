@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TestName"
+			"path" : "task5"
 		}
 	],
 	"backtrace" : 1,
@@ -11,6 +11,7 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -31,6 +32,12 @@
 			{
 				"command" : 1,
 				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
 				"line" : 10,
 				"parent" : 0
 			}
@@ -48,7 +55,7 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task5/include"
 				}
 			],
@@ -60,7 +67,7 @@
 			]
 		}
 	],
-	"id" : "TestName::@6890427a1f51a3e7e1df",
+	"id" : "task5::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -72,12 +79,17 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lncurses",
+				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
-	"name" : "TestName",
-	"nameOnDisk" : "TestName",
+	"name" : "task5",
+	"nameOnDisk" : "task5",
 	"paths" : 
 	{
 		"build" : ".",
