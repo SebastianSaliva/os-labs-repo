@@ -5,7 +5,7 @@
 
 #include "functions.h"
 
-#define MAX_BALLS 10
+#define MAX_BALLS 20
 
 typedef struct {
   int x;
@@ -21,7 +21,14 @@ BallData balls_arr[MAX_BALLS];
 int ball_count;
 int balls_to_add;
 int break_loop;
+pthread_t* threads_arr[MAX_BALLS];
+int ball_id_arr[MAX_BALLS];
 int main() {
+  for (int i = 0; i < MAX_BALLS; i++) {
+    ball_id_arr[i] = i;
+    pthread_t p_ball_handler;
+    threads_arr[i] = &p_ball_handler;
+  }
   counter_val = 0;
   direction = 1;
   ball_count = 1;
@@ -30,18 +37,17 @@ int main() {
 
   BallData ball = {10, 20, 1, 1};
   balls_arr[0] = ball;
-  int pos = 0;
 
   getmaxyx(stdscr, row, col); /* Obtiene el numbero de filas y columnas */
 
-  pthread_t p_updateBallPos;
-  pthread_t p_updateCounter;
+  pthread_t p_update_counter;
   pthread_t p_fetch_key_strokes;
 
+  initscr();
   curs_set(0);
   pthread_create(&p_fetch_key_strokes, NULL, fetch_key_strokes, NULL);
-  pthread_create(&p_updateCounter, NULL, UpdateCounter, NULL);
-  pthread_create(&p_updateBallPos, NULL, UpdateBallPos, (void*)&pos);
+  pthread_create(&p_update_counter, NULL, UpdateCounter, NULL);
+  pthread_create(threads_arr[0], NULL, UpdateBallPos, (void*)&ball_id_arr[0]);
   pthread_t id1, id2;
 
   while (!break_loop) {
@@ -56,8 +62,7 @@ int main() {
     usleep(100000);
   }
 
-  pthread_join(p_updateBallPos, NULL);
-  pthread_join(p_updateCounter, NULL);
+  pthread_join(p_update_counter, NULL);
   pthread_join(p_fetch_key_strokes, NULL);
 
   getch();

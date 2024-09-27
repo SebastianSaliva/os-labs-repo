@@ -8,7 +8,7 @@
 extern int counter_val;
 extern int row;
 extern int col;
-extern int direction;
+
 void* UpdateCounter() {
   while (1) {
     counter_val++;
@@ -24,13 +24,6 @@ typedef struct {
 } BallData;
 
 void* UpdateBallPos(void* param) {
-  // int* ptr_init_c = (int*)param;
-
-  // for (int i = *ptr_init_c; i < 35; i++) {
-  //   printf("%d\n", i);
-  //   usleep(500000);
-  // }
-
   BallData* ball = (BallData*)param;
 
   while (1) {
@@ -51,7 +44,4 @@ void* UpdateBallPos(void* param) {
 
     usleep(100000); /* Duerme por 100ms */
   }
-
-  // tdata->result = result;
-  // pthread_exit(NULL);
 }

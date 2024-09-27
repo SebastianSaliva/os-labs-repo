@@ -6,24 +6,36 @@
 
 #include "functions.h"
 
-int main() {
-  // pthread_create(&p_counting, &attr, Counting, (void*)&init_counter);
-  // pthread_create(&p_print, NULL, PrintMessage, (void*)message);
-  // pthread_attr_t attr;
-  // pthread_attr_init(&attr);
+typedef struct thread_data {
+  int a;
+  int quit;
+  int result;
 
+} thread_data;
+
+int main() {
   pthread_t p_receive;
   void* return_value;
 
   pthread_create(&p_receive, NULL, ReceiveValue, NULL);
-  pthread_join(p_receive, &return_value);
 
-  float* received = (float*)return_value;
+  thread_data vals = {0, 0, -1};
 
-  if (*received == -2) {
-    printf("Number greater than 100\n");
+
+
+
+  while (!((0 <= vals.result) && (vals.result <= 1)) && !vals.quit) {
+
+  }
+  if (vals.quit){
+        printf("Number greater than 100\n");
     exit(1);
   }
+
+
+  float* received = (float*)return_value;
+  pthread_join(p_receive, NULL);
+
 
   float asinRes;
 

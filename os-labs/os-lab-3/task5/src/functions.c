@@ -8,12 +8,14 @@
 #include <time.h>
 #include <unistd.h>
 
-#define MAX_BALLS 10
+#define MAX_BALLS 20
 
 extern int counter_val;
-
+extern int break_loop;
+extern pthread_t* threads_arr[MAX_BALLS];
+extern int ball_id_arr[MAX_BALLS];
 void* UpdateCounter() {
-  while (1) {
+  while (!break_loop) {
     counter_val++;
     sleep(1);
   }
@@ -35,66 +37,36 @@ extern int balls_to_add;
 
 int can_add_ball = 1;
 void* UpdateBallPos(void* param) {
-  // int* ptr_init_c = (int*)param;
-
-  // for (int i = *ptr_init_c; i < 35; i++) {
-  //   printf("%d\n", i);
-  //   usleep(500000);
-  // }
+  int* ball_id = (int*)param;
+  int* x = &balls_arr[*ball_id].x;
+  int* y = &balls_arr[*ball_id].y;
+  int* dy = &balls_arr[*ball_id].dy;
+  int* dx = &balls_arr[*ball_id].dx;
 
   while (!break_loop) {
-    int i = 0;
-    for (i; i < ball_count; i++) {
-      BallData* ball = &balls_arr[i];
-      ball->dx;
-      ball->dy;
-      ball->x += ball->dx;
-      ball->y += ball->dy;
-      if (ball->x >= col - 1) {
-        ball->dx = -1;
-      }
-      if (ball->y >= row - 1) {
-        ball->dy = -1;
-      }
-      if (ball->x <= 1) {
-        ball->dx = 1;
-      }
-      if (ball->y <= 1) {
-        ball->dy = 1;
-      }
-    }
-    while (balls_to_add && can_add_ball) {
-      if (ball_count < MAX_BALLS) {
-        int x = 10;
-        int y = 20;
-        BallData new_ball = {x, y, 1, 1};
-        balls_arr[i] = new_ball;
+    *x += *dx;
+    *y += *dy;
+    if (*x >= col - 1) *dx = -1;
 
-        balls_to_add -= 1;
-        ball_count++;
-        i++;
-      } else {
-        can_add_ball = 0;
-      }
-    }
+    if (*y >= row - 1) *dy = -1;
+
+    if (*x <= 1) *dx = 1;
+
+    if (*y <= 1) *dy = 1;
+
     usleep(100000); /* Duerme por 100ms */
   }
-
-  // tdata->result = result;
-  // pthread_exit(NULL);
 }
 
 #define ENTER_ASCII 13
 #define SPACE_ASCII 32
 
-extern int break_loop;
 void* fetch_key_strokes() {
-  initscr();
   keypad(stdscr, TRUE);
   noecho();
 
-  srand(time(NULL));  // Initialization, should only be called once.
-  int r = rand();     // Returns a pseudo-random integer between 0 and RAND_MAX.
+  srand(time(NULL));
+
   int key_stroke;
   while (!break_loop) {
     key_stroke = getch();
@@ -108,7 +80,28 @@ void* fetch_key_strokes() {
         break;
 
       case SPACE_ASCII:
-        if (can_add_ball) balls_to_add++;
+        if (can_add_ball) {
+          int ball_id = 0;
+          ball_id += ball_count;
+
+          int x = rand() % (col - 1) + 1;
+          int y = rand() % (row - 1) + 1;
+
+          int dx = 1;
+          int dy = 1;
+          uint8_t s = rand() % 4;
+          if (s & 1) dx *= -1;
+          s = s >> 1;
+          if (s & 1) dy *= -1;
+
+          BallData new_ball = {x, y, dx, dy};
+          balls_arr[ball_id] = new_ball;
+
+          pthread_create(threads_arr[ball_id], NULL, UpdateBallPos,
+                         (void*)&ball_id_arr[ball_id]);
+          ball_count++;
+          if (ball_count >= MAX_BALLS) can_add_ball = 0;
+        }
         break;
       case ENTER_ASCII:
 

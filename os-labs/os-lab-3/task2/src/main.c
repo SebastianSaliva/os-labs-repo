@@ -6,12 +6,13 @@
 
 #include "functions.h"
 
-double x[1000000];
+double tan_arr[1000000];
 
 int main() {
   for (int i = 0; i < 1000000; i++) {
-    x[i] = tan(i + 1);
+    tan_arr[i] = tan(i + 1);
   }
+  clock_t start = clock();
   pthread_t p_segment0;
   pthread_t p_segment1;
   pthread_t p_segment2;
@@ -23,11 +24,7 @@ int main() {
   int offset2 = 400000;
   int offset3 = 600000;
   int offset4 = 800000;
-  void* seg0return;
-  void* seg1return;
-  void* seg2return;
-  void* seg3return;
-  void* seg4return;
+
   double* seg0sum;
   double* seg1sum;
   double* seg2sum;
@@ -42,25 +39,34 @@ int main() {
   pthread_create(&p_segment3, NULL, SumSegment, (void*)&offset3);
   pthread_create(&p_segment4, NULL, SumSegment, (void*)&offset4);
 
-  pthread_join(p_segment0, &seg0return);
-  seg0sum = (double*)seg0return;
+  pthread_join(p_segment0, (void**)&seg0sum);
+
   total_sum += *seg0sum;
-  pthread_join(p_segment1, &seg1return);
-  seg1sum = (double*)seg1return;
+  pthread_join(p_segment1, (void**)&seg1sum);
+
   total_sum += *seg1sum;
-  pthread_join(p_segment2, &seg2return);
-  seg2sum = (double*)seg2return;
+  pthread_join(p_segment2, (void**)&seg2sum);
+
   total_sum += *seg2sum;
-  pthread_join(p_segment3, &seg3return);
-  seg3sum = (double*)seg3return;
+  pthread_join(p_segment3, (void**)&seg3sum);
+
   total_sum += *seg3sum;
-  pthread_join(p_segment4, &seg4return);
-  seg4sum = (double*)seg4return;
+  pthread_join(p_segment4, (void**)&seg4sum);
+
   total_sum += *seg4sum;
 
-  printf("Result: %lf\n", total_sum);
+  double clocks = clock() - start;
+  double t_s = ((double)clocks) / CLOCKS_PER_SEC;
+  printf("Result thread: %lf\n", total_sum);
+  printf("using threads took: %f milli seconds\n", t_s * 1000);
 
-  double tan_arr[1000000];
+  free(seg0sum);
+  free(seg1sum);
+  free(seg2sum);
+  free(seg3sum);
+  free(seg4sum);
+
+  start = clock();
 
   for (int i = 0; i < 1000000; i++) {
     tan_arr[i] = tan(i + 1);
@@ -69,6 +75,10 @@ int main() {
   for (int i = 0; i < 1000000; i++) {
     sum += tan_arr[i];
   }
-  printf("Result: %lf\n", sum);
+
+  clocks = clock() - start;
+  t_s = ((double)clocks) / CLOCKS_PER_SEC;
+  printf("Result main: %lf\n", sum);
+  printf("using main took: %f milli seconds\n", t_s * 1000);
   return 0;
 }

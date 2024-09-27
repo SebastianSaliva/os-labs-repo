@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-extern double x[1000000];
+extern double tan_arr[1000000];
 
 void* SumSegment(void* param) {
   // for (int i = 0; i < 1000000; i++) {
@@ -17,8 +17,8 @@ void* SumSegment(void* param) {
   double* segsum = malloc(sizeof(double));
   *segsum = 0;
   for (int i = 0; i < 200000; i++) {
-    *segsum += x[*offset + i];
+    *segsum += tan_arr[*offset + i];
   }
 
-  return (void*)segsum;
+  return segsum;
 }

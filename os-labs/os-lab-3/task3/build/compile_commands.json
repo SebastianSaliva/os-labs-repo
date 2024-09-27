@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/include -g -o CMakeFiles/task3.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/src/main.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/src/main.c",
+  "output": "CMakeFiles/task3.dir/src/main.c.o"
+},
+{
+  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/build",
+  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/include -g -o CMakeFiles/task3.dir/src/functions.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/src/functions.c",
+  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-3/task3/src/functions.c",
+  "output": "CMakeFiles/task3.dir/src/functions.c.o"
+}
+]
