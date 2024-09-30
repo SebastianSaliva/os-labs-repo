@@ -9,6 +9,7 @@
 double tan_arr[1000000];
 
 int main() {
+  // fill the array
   for (int i = 0; i < 1000000; i++) {
     tan_arr[i] = tan(i + 1);
   }
@@ -39,26 +40,22 @@ int main() {
   pthread_create(&p_segment3, NULL, SumSegment, (void*)&offset3);
   pthread_create(&p_segment4, NULL, SumSegment, (void*)&offset4);
 
+  // sum up all segments
   pthread_join(p_segment0, (void**)&seg0sum);
-
   total_sum += *seg0sum;
   pthread_join(p_segment1, (void**)&seg1sum);
-
   total_sum += *seg1sum;
   pthread_join(p_segment2, (void**)&seg2sum);
-
   total_sum += *seg2sum;
   pthread_join(p_segment3, (void**)&seg3sum);
-
   total_sum += *seg3sum;
   pthread_join(p_segment4, (void**)&seg4sum);
-
   total_sum += *seg4sum;
 
   double clocks = clock() - start;
-  double t_s = ((double)clocks) / CLOCKS_PER_SEC;
+  double seconds_taken = ((double)clocks) / CLOCKS_PER_SEC;
   printf("Result thread: %lf\n", total_sum);
-  printf("using threads took: %f milli seconds\n", t_s * 1000);
+  printf("using threads took: %f milli seconds\n", seconds_taken * 1000);
 
   free(seg0sum);
   free(seg1sum);
@@ -66,6 +63,7 @@ int main() {
   free(seg3sum);
   free(seg4sum);
 
+  // same thing but all in main
   start = clock();
 
   for (int i = 0; i < 1000000; i++) {
@@ -77,8 +75,8 @@ int main() {
   }
 
   clocks = clock() - start;
-  t_s = ((double)clocks) / CLOCKS_PER_SEC;
+  seconds_taken = ((double)clocks) / CLOCKS_PER_SEC;
   printf("Result main: %lf\n", sum);
-  printf("using main took: %f milli seconds\n", t_s * 1000);
+  printf("using main took: %f milli seconds\n", seconds_taken * 1000);
   return 0;
 }

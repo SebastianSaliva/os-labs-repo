@@ -8,17 +8,20 @@
 
 extern double tan_arr[1000000];
 
-void* SumSegment(void* param) {
-  // for (int i = 0; i < 1000000; i++) {
-  //   printf("%d\n", x[i]);
-  // }
-  int* offset = (int*)param;
+/**
+ * @brief sums up the segment (from offset to offset+200000) of tan array
+ *
+ * @param[in] segment_offset index from where to start the segment
+ * @return the sum of the segment
+ */
+void* SumSegment(void* segment_offset) {
+  int* offset = (int*)segment_offset;
 
-  double* segsum = malloc(sizeof(double));
-  *segsum = 0;
+  double* segment_sum = malloc(sizeof(double));
+  *segment_sum = 0;
   for (int i = 0; i < 200000; i++) {
-    *segsum += tan_arr[*offset + i];
+    *segment_sum += tan_arr[*offset + i];
   }
 
-  return segsum;
+  return segment_sum;
 }

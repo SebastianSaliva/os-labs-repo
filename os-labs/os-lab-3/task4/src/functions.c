@@ -5,17 +5,6 @@
 #include <string.h>
 #include <unistd.h>
 
-extern int counter_val;
-extern int row;
-extern int col;
-
-void* UpdateCounter() {
-  while (1) {
-    counter_val++;
-    sleep(1);
-  }
-}
-
 typedef struct {
   int x;
   int y;
@@ -23,8 +12,26 @@ typedef struct {
   int dy;
 } BallData;
 
-void* UpdateBallPos(void* param) {
-  BallData* ball = (BallData*)param;
+extern int counter_val;
+extern int row;
+extern int col;
+/**
+ * @brief updates the value of the counter every second
+ *
+ */
+void* UpdateCounter() {
+  while (1) {
+    counter_val++;
+    sleep(1);
+  }
+}
+/**
+ * @brief update the coords of the ball every 100ms
+ *
+ * @param[in] target_ball pointer to the instance of ball to be updated
+ */
+void* UpdateBallPos(void* target_ball) {
+  BallData* ball = (BallData*)target_ball;
 
   while (1) {
     ball->x += ball->dx;
@@ -42,6 +49,6 @@ void* UpdateBallPos(void* param) {
       ball->dy = 1;
     }
 
-    usleep(100000); /* Duerme por 100ms */
+    usleep(100000);
   }
 }

@@ -1,8 +1,8 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef TASK3_FUNCTIONS_H
+#define TASK3_FUNCTIONS_H
 
-void* file_tester();
-void* file_reader();
-void* array_calculator();
-void* file_writer();
-#endif  // FUNCTIONS_H
+void* FileTester();
+void* FileReader();
+void* ArrayCalculator();
+void* FileWriter();
+#endif  // TASK3_FUNCTIONS_H

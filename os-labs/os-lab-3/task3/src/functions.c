@@ -1,5 +1,3 @@
-
-
 #include "functions.h"
 
 #include <pthread.h>
@@ -15,11 +13,17 @@ int n_read_values = 0;
 float processed_buffer[10000];
 int n_processed_values = 0;
 
-void* file_tester() {
+/**
+ * @brief if the file data.txt doesn't exist, its created and filled with random
+ * nums
+ *
+ * @return indication of whether the file existed or not
+ *
+ */
+void* FileTester() {
   FILE* file;
   int* file_existed = malloc(sizeof(int));
 
-  // Check if the file exists
   if ((file = fopen("data.txt", "r"))) {
     fclose(file);
     *file_existed = 1;
@@ -27,18 +31,23 @@ void* file_tester() {
     *file_existed = 0;
     file = fopen("data.txt", "w");
     srand(time(NULL));
-
+    // write random 8 bit num to data.txt
     for (int i = 0; i < 10000; i++) {
-      uint8_t random_value = (uint8_t)(rand() % 256);
-      fprintf(file, "%u\n", random_value);
+      uint8_t num = (uint8_t)(rand() % 256);
+      fprintf(file, "%u\n", num);
     }
     fclose(file);
   }
 
-  return file_existed;  // File created and filled with random values
+  return file_existed;
 };
 
-void* file_reader() {
+/**
+ * @brief reads each line of data.txt and saves the number in each line to
+ * input_buffer
+ *
+ */
+void* FileReader() {
   clock_t start = clock();
 
   FILE* file;
@@ -46,7 +55,7 @@ void* file_reader() {
 
   for (int i = 0; i < 10000; i++) {
     char line[10];
-    fgets(line, sizeof(line), file);
+    fgets(line, sizeof(line), file);  // read value from data.txt
     uint8_t num = (uint8_t)atoi(line);
     input_buffer[i] = num;
     n_read_values++;
@@ -54,17 +63,24 @@ void* file_reader() {
   fclose(file);
 
   double clocks = clock() - start;
-  double t_s = ((double)clocks) / CLOCKS_PER_SEC;
-  printf("reader thread took: %f milli seconds\n", t_s * 1000);
+  double seconds_taken = ((double)clocks) / CLOCKS_PER_SEC;
+  printf("reader thread took: %f milli seconds\n", seconds_taken * 1000);
 }
-void* array_calculator() {
+
+/**
+ * @brief reads values from input_buffer, calculates its square root, and saves
+ * result in processed_buffer
+ *
+ */
+void* ArrayCalculator() {
   clock_t start = clock();
   int i = 0;
   while (i < 10000) {
+    // check if i index was written
     if (i < n_read_values) {
+      // sqrt calculator alg
       int r = (int)input_buffer[i];
       float yinit = r / 2;
-
       float ynp = 0.5 * (yinit + r / yinit);
       float yn;
       for (int n = 0; n <= 10; n++) {
@@ -78,16 +94,21 @@ void* array_calculator() {
   }
 
   double clocks = clock() - start;
-  double t_s = ((double)clocks) / CLOCKS_PER_SEC;
-  printf("processing thread took: %f milli seconds\n", t_s * 1000);
+  double seconds_taken = ((double)clocks) / CLOCKS_PER_SEC;
+  printf("processing thread took: %f milli seconds\n", seconds_taken * 1000);
 }
-
-void* file_writer() {
+/**
+ * @brief creates a file called sqrt.txt where the sqrt of the values will be
+ * written
+ *
+ */
+void* FileWriter() {
   clock_t start = clock();
   FILE* file;
   file = fopen("sqrt.txt", "w");
   int i = 0;
   while (i < 10000) {
+    // check if i index was already processed
     if (i < n_processed_values) {
       fprintf(file, "%f\n", processed_buffer[i]);
       i++;
@@ -96,6 +117,6 @@ void* file_writer() {
   fclose(file);
 
   double clocks = clock() - start;
-  double t_s = ((double)clocks) / CLOCKS_PER_SEC;
-  printf("writer thread took: %f milli seconds\n", t_s * 1000);
+  double seconds_taken = ((double)clocks) / CLOCKS_PER_SEC;
+  printf("writer thread took: %f milli seconds\n", seconds_taken * 1000);
 }

@@ -1,7 +1,8 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef TASK5_FUNCTIONS_H
+#define TASK5_FUNCTIONS_H
 
 void* UpdateCounter();
-void* UpdateBallPos(void* param);
-void* fetch_key_strokes();
-#endif  // FUNCTIONS_H
+void* UpdateBallPos(void* target_id);
+void* FetchKeyStrokes();
+void AddBall();
+#endif  // TASK5_FUNCTIONS_H

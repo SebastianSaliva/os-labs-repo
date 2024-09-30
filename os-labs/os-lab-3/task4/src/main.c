@@ -11,8 +11,6 @@ typedef struct {
   int dy;
 } BallData;
 
-#define ENTER_NCURSES 10
-
 int counter_val;
 int row, col;
 
