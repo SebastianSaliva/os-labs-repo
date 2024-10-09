@@ -1,3 +1,0 @@
-/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1/build/CMakeFiles/Task1.dir
-/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1/build/CMakeFiles/edit_cache.dir
-/home/sebastian/Desktop/os-labs-repo/os-labs/os-lab0/task1/build/CMakeFiles/rebuild_cache.dir

@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task2/build",
-  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task2/include -g -o CMakeFiles/task2.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task2/src/main.c",
-  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task2/src/main.c",
-  "output": "CMakeFiles/task2.dir/src/main.c.o"
-}
-]

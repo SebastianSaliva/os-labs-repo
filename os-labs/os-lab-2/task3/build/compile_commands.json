@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/build",
-  "command": "/usr/bin/gcc  -I/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/include -g -o CMakeFiles/counter_handler.dir/src/main.c.o -c /home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/src/main.c",
-  "file": "/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task3/src/main.c",
-  "output": "CMakeFiles/counter_handler.dir/src/main.c.o"
-}
-]

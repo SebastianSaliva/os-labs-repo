@@ -1,7 +1,0 @@
-{
-  "files.associations": {
-    "stdio.h": "c",
-    "fill_deck.h": "c",
-    "card.h": "c"
-  }
-}

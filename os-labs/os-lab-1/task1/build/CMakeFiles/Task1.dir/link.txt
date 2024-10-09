@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/Task1.dir/src/main.c.o CMakeFiles/Task1.dir/src/VerifyGuess.c.o CMakeFiles/Task1.dir/src/GetUserGuess.c.o CMakeFiles/Task1.dir/src/GenerateRandNumber.c.o -o Task1 

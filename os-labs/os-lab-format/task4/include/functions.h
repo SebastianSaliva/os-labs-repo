@@ -1,6 +1,6 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef TASK4_FUNCTIONS_H
+#define TASK4_FUNCTIONS_H
 
 void PrintTest();
 
-#endif  // FUNCTIONS_H
+#endif  // TASK4_FUNCTIONS_H

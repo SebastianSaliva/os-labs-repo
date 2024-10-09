@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/TestName.dir/src/main.c.o CMakeFiles/TestName.dir/src/Time.c.o CMakeFiles/TestName.dir/src/GetTime.c.o CMakeFiles/TestName.dir/src/PrintTime.c.o -o TestName 

@@ -1,3 +1,0 @@
-/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/build/CMakeFiles/qwriter.dir
-/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/build/CMakeFiles/edit_cache.dir
-/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qwriter/build/CMakeFiles/rebuild_cache.dir

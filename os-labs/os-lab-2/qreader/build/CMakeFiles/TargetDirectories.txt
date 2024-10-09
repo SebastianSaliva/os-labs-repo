@@ -1,3 +1,0 @@
-/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/build/CMakeFiles/qreader.dir
-/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/build/CMakeFiles/edit_cache.dir
-/home/ssg/Desktop/os-labs-repo/os-labs/os-lab-2/task4Qreader/build/CMakeFiles/rebuild_cache.dir
