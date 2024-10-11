@@ -1,2 +1,5 @@
 **/build/
+**/holder/
 **/.vscode/
+**/create_launchers.sh
+**/get_exec.sh
