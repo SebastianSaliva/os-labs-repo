@@ -5,11 +5,19 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -s")
 
 # Set the project name
-project(task4) 
+project(soundtest) 
 
 include_directories(include)
 # Add the executable
 
-add_executable(task4
+
+
+ find_package(ALSA REQUIRED)
+add_executable(soundtest
  src/main.c
  src/functions.c)
+ target_link_libraries(soundtest
+  PRIVATE ALSA::ALSA 
+  m)
+
+
