@@ -1,0 +1,51 @@
+EXER 1
+E0
+./task 0 0 0
+P:1 (pid: 170) (priority: 0) ended. Time Delta: 15.516666
+P:2 (pid: 171) (priority: 0) ended. Time Delta: 15.983333
+P:3 (pid: 172) (priority: 0) ended. Time Delta: 16.433333
+E1
+./task -10 0 10
+P:1 (pid: 174) (priority: -10) ended. Time Delta: 13.216667
+P:2 (pid: 175) (priority: 0) ended. Time Delta: 15.400000
+P:3 (pid: 176) (priority: 10) ended. Time Delta: 16.800000
+E2
+./task -20 0 10
+P:1 (pid: 178) (priority: -20) ended. Time Delta: 11.600000
+P:2 (pid: 179) (priority: 0) ended. Time Delta: 15.133333
+P:3 (pid: 180) (priority: 10) ended. Time Delta: 16.483333
+E3
+./task 0 0 20
+P:1 (pid: 182) (priority: 0) ended. Time Delta: 13.733333
+P:2 (pid: 183) (priority: 0) ended. Time Delta: 14.233333
+P:3 (pid: 184) (priority: 20) ended. Time Delta: 16.483333
+E4
+./task 10 10 -10
+P:3 (pid: 188) (priority: -10) ended. Time Delta: 12.683333
+P:1 (pid: 186) (priority: 10) ended. Time Delta: 16.666667
+P:2 (pid: 187) (priority: 10) ended. Time Delta: 16.933333
+E5
+./task -20 -20 -20
+P:1 (pid: 190) (priority: -20) ended. Time Delta: 15.816667
+P:2 (pid: 191) (priority: -20) ended. Time Delta: 16.266667
+P:3 (pid: 192) (priority: -20) ended. Time Delta: 16.533333
+
+EXER2
+T10
+16.383333
+16.616667
+16.666667
+T50
+16.35000
+16.93333
+17.25000
+T500
+8.60000
+14.08333
+16.450000
+T1000
+5.533333
+11.033333
+16.533333
+
+

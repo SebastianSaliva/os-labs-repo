@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-int num_children = 0;
+int num_children = 3;
 
 void cpu_bound_task(int id) {
   printf("Process %d started, pid: %d\n", id, getpid());
@@ -17,32 +17,38 @@ void cpu_bound_task(int id) {
 }
 
 int main(int argc, char* argv[]) {
+  int use_basecase = 0;
   if (argc == 1) {
-    printf("No arguments provided.");
-    return 1;
+    printf("No arguments provided.\n");
+    printf("Using basecaseEquivalent to: ./<task> 0 0 0");
+    use_basecase = 1;
   }
 
   struct timeval tv;
   gettimeofday(&tv, NULL);  // Get current time
   printf("Seconds: %ld\nMicroseconds: %ld\n", tv.tv_sec, tv.tv_usec);
 
-  num_children = argc - 1;
   int priorities[num_children] = {};
   // int priorities[num_children] = {10, 0, -10};  // priorities are now set via
   // arguments
 
-  for (int i = 0; i < num_children; i++) {
-    priorities[i] = atoi(argv[i + 1]);
-    if (!priorities[i] && priorities[i] != 0) {
-      perror("Invalid priority in arguments");
-      exit(1);
-    }
-    if (priorities[i] > 20 || priorities[i] < -20) {
-      perror("Invalid priority in arguments");
-      exit(1);
+  if (use_basecase) {
+    priorities[0] = 0;
+    priorities[1] = 0;
+    priorities[2] = 0;
+  } else {
+    for (int i = 0; i < num_children; i++) {
+      priorities[i] = atoi(argv[i + 1]);
+      if (!priorities[i] && priorities[i] != 0) {
+        perror("Invalid priority in arguments");
+        exit(1);
+      }
+      if (priorities[i] > 20 || priorities[i] < -20) {
+        perror("Invalid priority in arguments");
+        exit(1);
+      }
     }
   }
-
   pid_t pids[num_children];
   // Create multiple CPU-bound processes with different priorities
   for (int i = 0; i < num_children; i++) {
