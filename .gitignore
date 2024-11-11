@@ -3,3 +3,5 @@
 **/.vscode/
 **/create_launchers.sh
 **/get_exec.sh
+**/.idea/
+**/cmake-build-debug/
