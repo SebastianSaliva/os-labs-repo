@@ -34,14 +34,11 @@ extern float last_5_coords_array[5][2];
 /// let reading thread know it should read the next coord set
 /// @param signum
 void ReadCoordSet(int signum) {
-  if (signum == SIGUSR1) {
-    // printf("Reading coord set from bin file\n");
-    read_coords_now = 1;
-  }
+  if (signum == SIGUSR1) read_coords_now = 1;
 }
 
+/// @brief // Shift the array elements to the right 1 position
 void ShiftCoordsArray() {
-  // Shift the array elements to the right
   for (int i = 4; i > 0; i--) {
     last_5_coords_array[i][0] = last_5_coords_array[i - 1][0];
     last_5_coords_array[i][1] = last_5_coords_array[i - 1][1];
@@ -53,32 +50,29 @@ void* BinaryFileReader() {
   bin_file = fopen(bin_file_path, "rb");
   if (bin_file == NULL) {
     perror("Error opening file");
-    return 1;
+    exit(1);
   }
 
   while (1) {
     if (read_coords_now) {
-      float x, y;
-      int x_y_line = 0;
-
       // read line from bin file that is formated as int
-      x_y_line = ReadIntFromBinFile();
+      int x_y_line = ReadIntFromBinFile();
       // parse line to get x and y
-      x = x_y_line >> 16;
-      y = x_y_line & 0xFFFF;
-      // printf("x: %f, y: %f\n", x, y);
+      // float x = x_y_line >> 16;
+      // float y = x_y_line & 0xFFFF;
 
       // shift last_5_coords_array to the left
 
       ShiftCoordsArray();
-      latest_coords[0] = x;
-      latest_coords[1] = y;
+      latest_coords[0] = x_y_line >> 16;
+      latest_coords[1] = x_y_line & 0xFFFF;
       // replace 0th element with latest coords
-      last_5_coords_array[0][0] = latest_coords[0];
-      last_5_coords_array[0][1] = latest_coords[1];
+      last_5_coords_array[0][0] = x_y_line >> 16;
+      last_5_coords_array[0][1] = x_y_line & 0xFFFF;
 
       read_coords_now = 0;
     }
+    usleep(10000);
   }
 }
 
