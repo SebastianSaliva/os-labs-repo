@@ -27,9 +27,12 @@ FILE *bin_file;
 
 // coords array
 float latest_coords[2] = {TERM_WIDTH / 2, TERM_HEIGHT / 2};
-float prev_coords[2] = {TERM_WIDTH / 2, TERM_HEIGHT / 2};
 
-// float **last_5_coords_array[5];
+float last_5_coords_array[5][2] = {{TERM_WIDTH / 2, TERM_HEIGHT / 2},
+                                   {TERM_WIDTH / 2, TERM_HEIGHT / 2},
+                                   {TERM_WIDTH / 2, TERM_HEIGHT / 2},
+                                   {TERM_WIDTH / 2, TERM_HEIGHT / 2},
+                                   {TERM_WIDTH / 2, TERM_HEIGHT / 2}};
 
 int main() {
   // sets up timer to read from binary file every 10ms
@@ -48,12 +51,19 @@ int main() {
   while (1) {
     clear();
 
-    // mvprintw(prev_coords[1], prev_coords[0], "");
-    mvprintw(latest_coords[1], latest_coords[0], "*");
-
-    usleep(50000);  // allow time for mouse to plot
+    // plot the last 4 coords if they are not the same
+    // 0 is the same as lastest coord, hence we start at 1
+    for (int i = 1; i < 5; i++) {
+      if (last_5_coords_array[i] != last_5_coords_array[i - 1]) {
+        mvprintw((int)last_5_coords_array[i][1], (int)last_5_coords_array[i][0],
+                 "'");
+      }
+    }
+    mvprintw((int)last_5_coords_array[0][1], (int)last_5_coords_array[0][0],
+             "*");
+    usleep(10000);
     refresh();
-    usleep(100000);
+    usleep(10000);
   }
 
   pthread_join(binary_file_reader_thread, NULL);

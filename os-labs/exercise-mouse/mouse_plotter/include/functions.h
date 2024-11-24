@@ -6,5 +6,6 @@ void *BinaryFileReader();
 int ReadIntFromBinFile();
 void SetUpTimers();
 void IntSigHandler(int signum);
+void ShiftCoordsArray();
 
 #endif  // MOUSEPLOTTER_FUNCTIONS_H

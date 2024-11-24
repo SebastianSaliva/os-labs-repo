@@ -56,12 +56,12 @@ void* MouseReaderThread() {
     float term_coords[2];
     // convert abs pos to term coords
     AbsPosToTermCoords(&term_coords);
-    printf("%f, %f\n", term_coords[0], term_coords[1]);
+    // printf("%f, %f\n", term_coords[0], term_coords[1]);
 
     // transform term coords to int format
     int coords_in_int_format = ConvertCoordsToIntFormat(term_coords);
 
-    printf("%d\n", coords_in_int_format);
+    // printf("%d\n", coords_in_int_format);
 
     // Write the integer directly to the binary file
     fwrite(&coords_in_int_format, sizeof(int), 1, bin_file);
@@ -84,7 +84,7 @@ void AddDeltasToAbsPos(int8_t x_delta, int8_t y_delta) {
   curr_pos[0] = (curr_pos[0] > WINDOW_WIDTH) ? WINDOW_WIDTH : curr_pos[0];
   curr_pos[1] = (curr_pos[1] < 0) ? 0 : curr_pos[1];
   curr_pos[1] = (curr_pos[1] > WINDOW_HEIGHT) ? WINDOW_HEIGHT : curr_pos[1];
-  printf("pos: %d, %d\n", curr_pos[0], curr_pos[1]);
+  // printf("pos: %d, %d\n", curr_pos[0], curr_pos[1]);
 }
 
 /// @brief Convert pixel coordinates to terminal coordinates
