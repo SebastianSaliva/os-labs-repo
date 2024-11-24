@@ -1,4 +1,3 @@
-// PLOTTER
 #include <curses.h>
 #include <pthread.h>
 #include <signal.h>
@@ -70,5 +69,3 @@ int main() {
   getch();
   endwin();
 }
-
-// END OF PLOTTER

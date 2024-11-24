@@ -1,4 +1,4 @@
-// SAVER
+
 #include <math.h>
 #include <pthread.h>
 #include <signal.h>
@@ -38,5 +38,3 @@ int main() {
 
   return 0;
 }
-
-// END OF SAVER

@@ -56,12 +56,9 @@ void* MouseReaderThread() {
     float term_coords[2];
     // convert abs pos to term coords
     AbsPosToTermCoords(&term_coords);
-    // printf("%f, %f\n", term_coords[0], term_coords[1]);
 
     // transform term coords to int format
     int coords_in_int_format = ConvertCoordsToIntFormat(term_coords);
-
-    // printf("%d\n", coords_in_int_format);
 
     // Write the integer directly to the binary file
     fwrite(&coords_in_int_format, sizeof(int), 1, bin_file);
@@ -70,7 +67,7 @@ void* MouseReaderThread() {
   return NULL;
 }
 
-/// @brief
+/// @brief adds deltas to the current position
 /// @param x_delta
 /// @param y_delta
 /// @return
@@ -84,12 +81,10 @@ void AddDeltasToAbsPos(int8_t x_delta, int8_t y_delta) {
   curr_pos[0] = (curr_pos[0] > WINDOW_WIDTH) ? WINDOW_WIDTH : curr_pos[0];
   curr_pos[1] = (curr_pos[1] < 0) ? 0 : curr_pos[1];
   curr_pos[1] = (curr_pos[1] > WINDOW_HEIGHT) ? WINDOW_HEIGHT : curr_pos[1];
-  // printf("pos: %d, %d\n", curr_pos[0], curr_pos[1]);
 }
 
 /// @brief Convert pixel coordinates to terminal coordinates
-/// assuming 100x25 terminal size
-/// @param x
+/// @param term_coords array of floats
 void AbsPosToTermCoords(float* term_coords) {
   float x_ratio = (float)curr_pos[0] / WINDOW_WIDTH;
   float y_ratio = (float)curr_pos[1] / WINDOW_HEIGHT;
@@ -105,8 +100,7 @@ void AbsPosToTermCoords(float* term_coords) {
 }
 
 /// @brief takes a coordinate and converts it to int format
-/// @param x
-/// @param y
+/// @param term_coords array of floats
 /// @return the int format
 int ConvertCoordsToIntFormat(float* term_coords) {
   // Combine two integers into a single integer for compact storage
